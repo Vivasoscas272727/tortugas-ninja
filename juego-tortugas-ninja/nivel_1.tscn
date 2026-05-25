@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://i6holcmcw1an"]
+
+[ext_resource type="Script" uid="uid://cppn3kshthk4l" path="res://nivel_1.gd" id="1_xi31o"]
+[ext_resource type="PackedScene" uid="uid://cn5fil1gk77l0" path="res://estela_arma.tscn" id="2_eciuy"]
+
+[node name="Nivel1" type="Node2D" unique_id=618439342]
+script = ExtResource("1_xi31o")
+
+[node name="Timer" type="Timer" parent="." unique_id=896438759]
+autostart = true
+
+[node name="EstelaArma" parent="." unique_id=940233591 instance=ExtResource("2_eciuy")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
