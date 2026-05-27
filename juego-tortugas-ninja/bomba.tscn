@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dyc6cw5sv7tm1"]
+
+[ext_resource type="Script" uid="uid://cu6q4ogivwp3t" path="res://pizza.gd" id="1_ncxna"]
+[ext_resource type="Texture2D" uid="uid://bycvlekqatf5i" path="res://shuriken.png" id="2_ncxna"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i514n"]
+radius = 82.75868
+
+[node name="Bomba" type="RigidBody2D" unique_id=230791850 groups=["bomba"]]
+script = ExtResource("1_ncxna")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1602271585]
+scale = Vector2(0.2, 0.194)
+texture = ExtResource("2_ncxna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1499505079]
+position = Vector2(5.0000305, 1)
+scale = Vector2(-0.8461582, 0.7916678)
+shape = SubResource("CircleShape2D_i514n")

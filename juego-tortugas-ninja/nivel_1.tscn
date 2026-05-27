@@ -11,4 +11,50 @@ autostart = true
 
 [node name="EstelaArma" parent="." unique_id=940233591 instance=ExtResource("2_eciuy")]
 
+[node name="InterfazArmas" type="CanvasLayer" parent="." unique_id=385581600]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InterfazArmas" unique_id=640363934]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="InterfazArmas/HBoxContainer" unique_id=478548513]
+layout_mode = 2
+text = "Katana
+"
+
+[node name="Button2" type="Button" parent="InterfazArmas/HBoxContainer" unique_id=635784388]
+layout_mode = 2
+text = "bo"
+
+[node name="Button3" type="Button" parent="InterfazArmas/HBoxContainer" unique_id=2008815368]
+layout_mode = 2
+text = "nunchako"
+
+[node name="Button4" type="Button" parent="InterfazArmas/HBoxContainer" unique_id=1110974067]
+layout_mode = 2
+text = "sai"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=944247826]
+
+[node name="Textopuntos" type="Label" parent="HUD" unique_id=1209722859]
+anchors_preset = -1
+anchor_left = 0.9331597
+anchor_right = 1.0
+anchor_bottom = 0.07561728
+grow_horizontal = 0
+text = "puntos: 0.
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Textovidas" type="Label" parent="HUD" unique_id=762351464]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -63.0
+offset_top = 20.0
+offset_right = -5.0
+offset_bottom = 43.0
+grow_horizontal = 0
+text = "vidas: 3"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timeout"]
