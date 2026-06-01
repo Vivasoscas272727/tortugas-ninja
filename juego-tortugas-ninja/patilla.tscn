@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://du1s7a4xtclpy"]
+
+[ext_resource type="Texture2D" uid="uid://dcbpy7v6ujern" path="res://game3.png" id="1_f6b0p"]
+
+[node name="patilla" unique_id=230791850]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1602271585]
+texture = ExtResource("1_f6b0p")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1499505079]
+position = Vector2(-11, 127)
+scale = Vector2(0.8, 0.8)

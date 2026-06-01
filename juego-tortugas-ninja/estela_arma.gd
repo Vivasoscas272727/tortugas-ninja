@@ -1,6 +1,8 @@
 extends Line2D
 
 # 1. LAS VARIABLES
+var pedazos_pizza = preload("res://objeto_roto.tscn")
+var pedazos_patilla = preload("res://patilla_roto.tscn")
 var longitud_estela = 10 
 
 var DATOS_ARMAS = {
@@ -11,10 +13,6 @@ var DATOS_ARMAS = {
 }
 
 var arma_actual = "katana" 
-
-# >>> ESTO FALTABA: Cargar la escena de los pedazos en memoria <<<
-var escena_pedazos = preload("res://objeto_roto.tscn")
-
 
 # 2. SE EJECUTA AL INICIAR
 func _ready() -> void:
@@ -40,26 +38,32 @@ func _process(_delta: float) -> void:
 	# Hace que el círculo de colisión siga a la punta de la línea
 	$Area2D.global_position = pos_raton
 
-
-# >>> ESTO FALTABA: La nueva lógica de explosión <<<
+# 5. LÓGICA DE CORTAR Y EXPLOSIONES
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	# 1. Comprobamos que el objeto tocado sea el original y no un pedazo suelto
+	# Comprobamos que el objeto tocado sea el original y no un pedazo suelto
 	if body.is_in_group("enemigo"):
-		var pedazos = escena_pedazos.instantiate()
-		pedazos.global_position = body.global_position
+		var pedazos = null
 		
-		# 2. call_deferred le dice a Godot: "Espera a que termine el choque para meter esto"
-		get_tree().current_scene.call_deferred("add_child", pedazos)
+		# Convertimos el nombre a minúsculas para que no haya errores de texto
+		var nombre_objeto = body.name.to_lower()
 		
+		# Revisamos el nombre del objeto para saber qué pedazos instanciar
+		if nombre_objeto.begins_with("pizza"):
+			pedazos = pedazos_pizza.instantiate()
+		elif nombre_objeto.begins_with("patilla"):
+			pedazos = pedazos_patilla.instantiate()	
+			
+		# Solo instanciamos las mitades si reconoció el objeto
+		if pedazos != null:
+			pedazos.global_position = body.global_position
+			get_tree().current_scene.call_deferred("add_child", pedazos)
+			
 		get_tree().current_scene.sumar_punto()
-		# 3. Eliminamos el robot original
 		body.queue_free()
 	
 	elif body.is_in_group("bomba"):
 		# Le avisamos al nivel principal que reste una vida
 		get_tree().current_scene.restar_vida()
-		
-		# Opcional: Podrías añadir un efecto de explosión aquí después
 		
 		# Destruimos la bomba para que no siga cayendo
 		body.queue_free()

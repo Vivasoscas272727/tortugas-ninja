@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dtbyp5f8ma7lk"]
+
+[ext_resource type="Texture2D" uid="uid://dnlcbwayo6hdg" path="res://game2.png" id="1_g0ldc"]
+
+[node name="patilla" type="Node2D" unique_id=1764248513]
+
+[node name="Mitadizquierda" type="RigidBody2D" parent="." unique_id=2076444338]
+collision_mask = 0
+linear_velocity = Vector2(-201, -300)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mitadizquierda" unique_id=1356962309]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_g0ldc")
+region_enabled = true
+region_rect = Rect2(247.59985, 1072.575, 619.65, 692.55005)
+
+[node name="MitadDerecha" type="RigidBody2D" parent="." unique_id=649578010]
+position = Vector2(2, -13)
+collision_mask = 0
+linear_velocity = Vector2(200, -300)
+
+[node name="Sprite2D" type="Sprite2D" parent="MitadDerecha" unique_id=1872642727]
+position = Vector2(2.0000076, 9)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_g0ldc")
+region_enabled = true
+region_rect = Rect2(240.12512, 1018.5751, 704.7001, 820.1251)

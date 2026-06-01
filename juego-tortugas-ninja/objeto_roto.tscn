@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://b8fmnhm5w6idc"]
 
-[ext_resource type="Texture2D" uid="uid://coq6tvo638y5d" path="res://icon.svg" id="1_yc7xl"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_mycit"]
+[ext_resource type="Texture2D" uid="uid://bonhugj51h6" path="res://game5.png" id="1_yc7xl"]
 
 [node name="Objetoroto" type="Node2D" unique_id=1764248513]
 
@@ -11,21 +9,20 @@ collision_mask = 0
 linear_velocity = Vector2(-201, -300)
 
 [node name="Sprite2D" type="Sprite2D" parent="Mitadizquierda" unique_id=1356962309]
+position = Vector2(-6.4500003, -14.8)
+scale = Vector2(0.18826206, 0.1711501)
 texture = ExtResource("1_yc7xl")
 region_enabled = true
-region_rect = Rect2(2.7999878, 5.799999, 60.800003, 119.466675)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mitadizquierda" unique_id=701212152]
-shape = SubResource("CircleShape2D_mycit")
+region_rect = Rect2(1778.4999, 39.82492, 1099.5748, 1026.675)
 
 [node name="MitadDerecha" type="RigidBody2D" parent="." unique_id=649578010]
+position = Vector2(2, -13)
 collision_mask = 0
 linear_velocity = Vector2(200, -300)
 
 [node name="Sprite2D" type="Sprite2D" parent="MitadDerecha" unique_id=1872642727]
+position = Vector2(213, 195.99998)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_yc7xl")
 region_enabled = true
-region_rect = Rect2(65.33365, -3.7999783, 65.0668, 139.20027)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MitadDerecha" unique_id=1256843668]
-shape = SubResource("CircleShape2D_mycit")
+region_rect = Rect2(1748.1249, -39.150085, 1166.4, 1111.7251)

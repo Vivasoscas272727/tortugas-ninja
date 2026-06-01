@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://chjyh0ipjmg4t"]
+
+[ext_resource type="Script" uid="uid://d3r8itj1g8mss" path="res://menu_principal.gd" id="1_bj1uy"]
+
+[node name="MenuPrincipal" type="Control" unique_id=1425715533]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bj1uy")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1588118017]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1707706991]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1831593578]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=76497844]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.50244564, 0.30527726, 0.15077776, 1)
+
+[node name="Ninja-tortules" type="Label" parent="." unique_id=2065481502]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1665557222]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CajaInicial" type="VBoxContainer" parent="." unique_id=1661092191]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -33.0
+offset_right = 40.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Opciones" type="Button" parent="CajaInicial" unique_id=2120661423]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Opciones"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CajaInicial/Opciones" unique_id=957352019]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Jugar" type="Button" parent="CajaInicial" unique_id=447085556]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Jugar"
+
+[node name="CajaArmas" type="VBoxContainer" parent="." unique_id=387844763]
+visible = false
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -85.5
+offset_right = 48.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="katana" type="Button" parent="CajaArmas" unique_id=1775082134]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Katana"
+
+[node name="nunchakus" type="Button" parent="CajaArmas" unique_id=32168689]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Nunchakus"
+
+[node name="bastón" type="Button" parent="CajaArmas" unique_id=119195555]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Bo
+"
+
+[node name="Sais" type="Button" parent="CajaArmas" unique_id=126857434]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Sais"
+
+[node name="volver" type="Button" parent="CajaArmas" unique_id=1911634560]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Volver"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897207783]
+
+[connection signal="pressed" from="CajaInicial/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="CajaInicial/Jugar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CajaArmas/katana" to="." method="_on_katana_pressed"]
+[connection signal="pressed" from="CajaArmas/nunchakus" to="." method="_on_nunchakus_pressed"]
+[connection signal="pressed" from="CajaArmas/bastón" to="." method="_on_bastón_pressed"]
+[connection signal="pressed" from="CajaArmas/Sais" to="." method="_on_sais_pressed"]
+[connection signal="pressed" from="CajaArmas/volver" to="." method="_on_volver_pressed"]
