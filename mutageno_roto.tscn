@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cahu5541c7wva"]
+
+[ext_resource type="Texture2D" uid="uid://c1wdn4sj0qtqr" path="res://game1 (1).png" id="1_l15vn"]
+
+[node name="mutageno" type="Node2D" unique_id=1764248513]
+
+[node name="Mitadizquierda" type="RigidBody2D" parent="." unique_id=2076444338]
+collision_mask = 0
+linear_velocity = Vector2(-201, -300)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mitadizquierda" unique_id=1356962309]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_l15vn")
+region_enabled = true
+region_rect = Rect2(167.2251, 210.60004, 601.42505, 698.62506)
+
+[node name="MitadDerecha" type="RigidBody2D" parent="." unique_id=649578010]
+position = Vector2(2, -13)
+collision_mask = 0
+linear_velocity = Vector2(200, -300)
+
+[node name="Sprite2D" type="Sprite2D" parent="MitadDerecha" unique_id=1872642727]
+position = Vector2(2.0000076, 9)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_l15vn")
+region_enabled = true
+region_rect = Rect2(120.0249, 153.34988, 710.775, 801.9)

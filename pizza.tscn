@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://chx12a4jrbrjq"]
+
+[ext_resource type="Script" uid="uid://cu6q4ogivwp3t" path="res://pizza.gd" id="1_5birb"]
+[ext_resource type="Texture2D" uid="uid://dsfeirs7deqy" path="res://game (1).png" id="2_i514n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i514n"]
+radius = 52.03845
+
+[node name="Pizza" type="RigidBody2D" unique_id=230791850 groups=["enemigo", "es_pizza"]]
+collision_mask = 0
+script = ExtResource("1_5birb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1602271585]
+scale = Vector2(0.25, 0.25)
+skew = -0.22863813
+texture = ExtResource("2_i514n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1499505079]
+position = Vector2(-70, -90)
+shape = SubResource("CircleShape2D_i514n")

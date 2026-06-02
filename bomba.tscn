@@ -4,16 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://iq632qnjdd2m" path="res://game4.png" id="2_ncxna"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i514n"]
-radius = 51.81289
+radius = 46.366825
 
 [node name="Bomba" type="RigidBody2D" unique_id=230791850 groups=["bomba"]]
+collision_mask = 0
 script = ExtResource("1_ncxna")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1602271585]
+position = Vector2(-219, -110)
 scale = Vector2(0.2, 0.194)
 texture = ExtResource("2_ncxna")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1499505079]
-position = Vector2(217, 121.00001)
+position = Vector2(-6.999999, 7)
 scale = Vector2(-0.8461582, 0.7916678)
 shape = SubResource("CircleShape2D_i514n")

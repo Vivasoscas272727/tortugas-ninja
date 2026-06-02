@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://du1s7a4xtclpy"]
+
+[ext_resource type="Texture2D" uid="uid://dcbpy7v6ujern" path="res://game3.png" id="1_f6b0p"]
+[ext_resource type="Script" uid="uid://cu6q4ogivwp3t" path="res://pizza.gd" id="1_sfp22"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i514n"]
+radius = 52.03845
+
+[node name="patilla" type="RigidBody2D" unique_id=230791850 groups=["enemigo", "es_patilla"]]
+collision_mask = 0
+script = ExtResource("1_sfp22")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1602271585]
+scale = Vector2(0.25, 0.25)
+skew = -0.22863813
+texture = ExtResource("1_f6b0p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1499505079]
+position = Vector2(-13, 116)
+shape = SubResource("CircleShape2D_i514n")

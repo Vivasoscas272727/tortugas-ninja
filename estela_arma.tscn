@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cn5fil1gk77l0"]
 
 [ext_resource type="Script" uid="uid://l1jib2srb47b" path="res://estela_arma.gd" id="1_r6loo"]
+[ext_resource type="Texture2D" uid="uid://ccjh76uqme811" path="res://katana.png" id="2_5u2wl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r6loo"]
 radius = 15.0
@@ -10,9 +11,13 @@ default_color = Color(0.21960784, 0.20392157, 0.6039216, 1)
 script = ExtResource("1_r6loo")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=741136713]
-z_index = -1
+position = Vector2(33, -41)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1772318847]
 shape = SubResource("CircleShape2D_r6loo")
+
+[node name="FotoArma" type="Sprite2D" parent="Area2D" unique_id=1777546296]
+scale = Vector2(0.115760334, 0.16031747)
+texture = ExtResource("2_5u2wl")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://ltpcs7aeg70v"]
+
+[ext_resource type="Texture2D" uid="uid://1c23avcgoqmr" path="res://WhatsApp Image 2026-05-29 at 7.13.02 PM-convertido-de-jpeg.png" id="1_eciuy"]
+[ext_resource type="PackedScene" uid="uid://cn5fil1gk77l0" path="res://estela_arma.tscn" id="2_2lask"]
+[ext_resource type="Script" uid="uid://cppn3kshthk4l" path="res://nivel_1.gd" id="2_m2gv8"]
+
+[node name="Nivel1" type="Node2D" unique_id=1605550130]
+position = Vector2(61, -19)
+script = ExtResource("2_m2gv8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1117341868]
+position = Vector2(539, 342)
+scale = Vector2(2.0867953, 1)
+texture = ExtResource("1_eciuy")
+
+[node name="Timer" type="Timer" parent="." unique_id=2061210555]
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=21274267]
+
+[node name="Textopuntos" type="Label" parent="HUD" unique_id=1296198073]
+offset_left = 963.0
+offset_top = 9.0
+offset_right = 1079.0
+offset_bottom = 32.0
+text = "Puntos: 0"
+
+[node name="Textovidas" type="Label" parent="HUD" unique_id=755810111]
+offset_left = 988.0
+offset_top = 33.0
+offset_right = 1044.0
+offset_bottom = 56.0
+text = "Vidas:5"
+
+[node name="PantallaFinal" type="CanvasLayer" parent="." unique_id=1916014683]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="PantallaFinal" unique_id=1362340747]
+anchors_preset = -1
+anchor_right = 0.112
+anchor_bottom = 0.062000003
+offset_left = 19.0
+offset_top = -15.0
+offset_right = 1041.976
+offset_bottom = 610.824
+color = Color(0.05, 0.05, 0.05, 0.827451)
+
+[node name="Label" type="Label" parent="PantallaFinal" unique_id=1749939375]
+offset_left = 469.0
+offset_top = 191.0
+offset_right = 556.0
+offset_bottom = 214.0
+text = "Game Over"
+
+[node name="Label2" type="Label" parent="PantallaFinal" unique_id=1866180461]
+offset_left = 463.0
+offset_top = 224.0
+offset_right = 561.0
+offset_bottom = 273.0
+text = "Puntaje final
+"
+
+[node name="Btnreiniciar" type="Button" parent="PantallaFinal" unique_id=304047174]
+anchors_preset = -1
+anchor_right = 0.083000004
+anchor_bottom = 0.093
+offset_left = 330.0
+offset_top = 322.0
+offset_right = 353.384
+offset_bottom = 292.736
+text = "Volver a jugar "
+
+[node name="Btnpersonaje" type="Button" parent="PantallaFinal" unique_id=140223951]
+offset_left = 612.0
+offset_top = 324.0
+offset_right = 737.0
+offset_bottom = 355.0
+text = "Menu principal
+"
+
+[node name="BtnNivel2" type="Button" parent="PantallaFinal" unique_id=1029835019]
+visible = false
+offset_left = 470.0
+offset_top = 381.0
+offset_right = 594.0
+offset_bottom = 412.0
+text = "Pasar al nivel 2"
+
+[node name="EstelaArma" parent="." unique_id=940233591 instance=ExtResource("2_2lask")]
+position = Vector2(371, 193)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
+[connection signal="pressed" from="PantallaFinal/Btnreiniciar" to="." method="_on_btnreiniciar_pressed"]
+[connection signal="pressed" from="PantallaFinal/Btnpersonaje" to="." method="_on_btnpersonaje_pressed"]
+[connection signal="pressed" from="PantallaFinal/BtnNivel2" to="." method="_on_btn_nivel_2_pressed"]
